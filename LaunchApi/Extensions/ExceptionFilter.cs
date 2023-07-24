@@ -13,7 +13,7 @@ namespace LaunchApi.Extensions
                 switch (httpResponseException?.StatusCode)
                 {
                     case HttpStatusCode.NotFound:
-                        context.Result = new NotFoundObjectResult(context.Exception.Message);
+                        context.Result = new NotFoundObjectResult("No launch exists by the specified id.");
                         break;
                     default:
                         context.Result = new ObjectResult("Internal Server Error.")
