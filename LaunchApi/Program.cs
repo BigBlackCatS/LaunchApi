@@ -4,14 +4,16 @@ using LaunchApi.Middlewares;
 using LaunchApi.Profilers.v1;
 using LaunchApi.Services;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using NLog.Extensions.Logging;
 using NLog.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<ExceptionFilter>();
+});
 builder.Services.AddEndpointsApiExplorer();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.ConfigureVersioning();

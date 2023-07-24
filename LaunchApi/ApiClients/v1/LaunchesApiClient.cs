@@ -1,5 +1,8 @@
 ﻿using System.Net;
+using System.Web.Http;
+using System.Web.Http.Results;
 using LaunchApi.Domain.Models;
+using LaunchApi.Extensions;
 using LaunchApi.SpaceXContracts.Transport.Models;
 using LaunchApi.SpaceXContracts.Transport.Requests;
 using Newtonsoft.Json;
@@ -43,6 +46,10 @@ namespace LaunchApi.ApiClients.v1
             {
                 return JsonConvert.DeserializeObject<PagedResult<Launch>>(content);
             }
+            else
+            {
+                response.EnsureSuccessStatusCode();
+            }
 
             return null;
         }
@@ -78,6 +85,10 @@ namespace LaunchApi.ApiClients.v1
             {
                 return JsonConvert.DeserializeObject<PagedResult<Launch>>(content);
             }
+            else
+            {
+                response.EnsureSuccessStatusCode();
+            }
 
             return null;
         }
@@ -95,6 +106,10 @@ namespace LaunchApi.ApiClients.v1
             if (response.StatusCode == HttpStatusCode.OK)
             {
                 return JsonConvert.DeserializeObject<Launch>(content);
+            }
+            else
+            {
+                response.EnsureSuccessStatusCode();
             }
 
             return null;
