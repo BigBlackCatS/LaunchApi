@@ -13,7 +13,7 @@ namespace LaunchApi.Domain.Models
 
         public Links Links { get; set; }
 
-        [JsonProperty("static_fire_date_utc")]
+        [JsonProperty("date_utc")]
         public DateTime? FireDateUtc { get; set; }
 
         [JsonProperty("date_local")]
