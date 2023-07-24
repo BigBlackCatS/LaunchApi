@@ -1,4 +1,6 @@
-﻿namespace LaunchApi.Domain.Models
+﻿using Newtonsoft.Json;
+
+namespace LaunchApi.Domain.Models
 {
     public class Links
     {
@@ -15,5 +17,8 @@
         public string Article { get; set; }
 
         public string Wikipedia { get; set; }
+
+        [JsonProperty("youtube_id")]
+        public string YouTubeId { get; set; }
     }
 }

@@ -15,5 +15,7 @@
         public string Article { get; set; }
 
         public string Wikipedia { get; set; }
+
+        public string YouTubeId { get; set; }
     }
 }
