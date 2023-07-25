@@ -32,6 +32,7 @@ namespace LaunchApi.Controllers.v1
         /// <returns>A collection of the past launches.</returns>
         /// 
         [ProducesResponseType(typeof(PagedResult<Launch>), 200)]
+        [ProducesResponseType(400)]
         [ProducesResponseType(500)]
         [HttpGet("past")]
         public async Task<PagedResult<Launch>> GetPastLaunchesAsync(
@@ -57,6 +58,7 @@ namespace LaunchApi.Controllers.v1
         /// <returns>A collection of the upcoming launches.</returns>
         /// 
         [ProducesResponseType(typeof(PagedResult<Launch>), 200)]
+        [ProducesResponseType(400)]
         [ProducesResponseType(500)]
         [HttpGet("upcoming")]
         public async Task<PagedResult<Launch>> GetUpcomingLaunchesAsync(

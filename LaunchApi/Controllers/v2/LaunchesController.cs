@@ -27,6 +27,7 @@ namespace LaunchApi.Controllers.v2
         /// <param name="cancellationToken">In case a request is cancelled, we will pass a cancellation token to call off execution of the request.</param>
         /// <returns>A collection of the past launches.</returns>
         [ProducesResponseType(typeof(PagedResult<Launch>), 200)]
+        [ProducesResponseType(400)]
         [ProducesResponseType(500)]
         [HttpGet("past")]
         public async Task<PagedResult<Launch>> GetPastLaunchesAsync(
@@ -49,6 +50,7 @@ namespace LaunchApi.Controllers.v2
         /// <param name="cancellationToken">In case a request is cancelled, we will pass a cancellation token to call off execution of the request.</param>
         /// <returns>A collection of the upcoming launches.</returns>
         [ProducesResponseType(typeof(PagedResult<Launch>), 200)]
+        [ProducesResponseType(400)]
         [ProducesResponseType(500)]
         [HttpGet("upcoming")]
         public async Task<PagedResult<Launch>> GetUpcomingLaunchesAsync(
